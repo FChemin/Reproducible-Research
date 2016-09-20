@@ -8,7 +8,7 @@ download.file(url, destfile = "payment.csv", method = "curl")
 
 data <- read.csv(file = "payment.csv", header = TRUE, sep = ",")
 
-subNY <- grepl("NY", data$Hospital.Referral.Region.Description, ignore.case = TRUE)
+subNY <- grepl("New York", data$Provider.City, ignore.case = TRUE)
 dataNY <- data[subNY,]
 
 pdf("plot1.pdf")
